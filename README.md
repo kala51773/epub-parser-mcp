@@ -51,7 +51,8 @@ Add the following to your Claude Desktop configuration file:
   "mcpServers": {
     "epub-parser": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-epub-parser"]
+      "args": ["-y", "epub-parser-mcp"],
+      "workingDirectory": "D:\\AI_place\\epub-parser-mcp"
     }
   }
 }
