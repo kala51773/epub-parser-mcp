@@ -4,7 +4,8 @@
   "description": "MCP server for parsing EPUB files",
   "type": "module",
   "bin": {
-    "epub-parser-mcp": "./build/index.js"
+    "epub-parser-mcp": "./build/index.js",
+    "mcp-epub-parser": "./build/index.js"
   },
   "scripts": {
     "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",

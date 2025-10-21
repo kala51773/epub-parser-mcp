@@ -39,20 +39,95 @@ npm install
 npm run build
 ```
 
-### Usage with Claude Desktop
+## 🔧 MCP Configuration
 
-Add to your Claude Desktop configuration:
+### Claude Desktop Configuration
 
+Add the following to your Claude Desktop configuration file:
+
+**Using npx (Recommended):**
+```json
+{
+  "mcpServers": {
+    "epub-parser": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-epub-parser"]
+    }
+  }
+}
+```
+
+**Alternative: Using node directly (if npx is not supported):**
 ```json
 {
   "mcpServers": {
     "epub-parser": {
       "command": "node",
-      "args": ["/path/to/epub-parser-mcp/build/index.js"]
+      "args": ["D:\\AI_place\\epub-parser-mcp\\build\\index.js"]
     }
   }
 }
 ```
+
+**Note:** Claude Desktop currently supports commands starting with `python -m`, `uv`, `uvx`, or `npx`. The `node` command may not be supported in some environments.
+
+### Configuration File Locations
+
+- **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+- **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Linux**: `~/.config/Claude/claude_desktop_config.json`
+
+### Configuration Steps
+
+1. **Build the project** (if not already built):
+   ```bash
+   npm run build
+   ```
+
+2. **Locate your Claude Desktop configuration file** (see locations above)
+
+3. **Add the MCP server configuration** to the `mcpServers` section
+
+4. **Restart Claude Desktop** to load the new configuration
+
+5. **Verify the server is running** by checking the Claude Desktop logs
+
+### Configuration Validation
+
+After configuration, you can verify the server is working by:
+
+1. **Check Claude Desktop logs** for any MCP-related errors
+2. **Test the tools** by asking Claude to use the EPUB parser tools
+3. **Verify server startup** - the server should start automatically when Claude Desktop launches
+
+### Troubleshooting
+
+**Common Issues:**
+
+1. **Path Issues**: Ensure the path to `build/index.js` is correct and accessible
+2. **Node.js Version**: Make sure Node.js 18+ is installed and in your PATH
+3. **Permissions**: Ensure the build files have proper execution permissions
+4. **Dependencies**: Run `npm install` if dependencies are missing
+
+**Error Messages:**
+- "Command not found": Check Node.js installation and PATH
+- "File not found": Verify the path to build/index.js
+- "Permission denied": Check file permissions on build directory
+
+### Advanced Configuration
+
+For development, you can run the server manually:
+
+```bash
+# Build and start the server
+npm run build
+npm start
+
+# Or run directly
+node build/index.js
+```
+
+The server will output connection information and any errors to the console.
 
 ## 📖 Usage Examples
 
