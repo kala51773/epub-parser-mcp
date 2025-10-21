@@ -190,16 +190,7 @@ This project is licensed under the GPL License - see the [LICENSE](LICENSE) file
 - EPUB parsing powered by [adm-zip](https://github.com/cthackers/adm-zip) and [xml2js](https://github.com/Leonidas-from-XIV/node-xml2js)
 - Text extraction using [cheerio](https://github.com/cheeriojs/cheerio)
 
-## 📞 Support
 
-If you encounter any issues or have questions:
 
-1. Check the [FAQ](#) section
-2. Open an [issue](https://github.com/your-username/epub-parser-mcp/issues)
-3. Contact the maintainer
-
----
-
-**Made with ❤️ for the AI community**
 
 *Empowering AI assistants to read and understand EPUB documents*
