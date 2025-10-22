@@ -33,11 +33,11 @@
   "license": "GPL-3.0-only",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/epub-parser-mcp.git"
+    "url": "https://github.com/kala51773/epub-parser-mcp.git"
   },
-  "homepage": "https://github.com/your-username/epub-parser-mcp#readme",
+  "homepage": "https://github.com/kala51773/epub-parser-mcp#readme",
   "bugs": {
-    "url": "https://github.com/your-username/epub-parser-mcp/issues"
+    "url": "https://github.com/kala51773/epub-parser-mcp/issues"
   },
   "engines": {
     "node": ">=18.0.0"
