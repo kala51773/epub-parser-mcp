@@ -27,6 +27,7 @@ A powerful TypeScript-based Model Context Protocol (MCP) server for parsing EPUB
 
 ### Installation
 
+#### 方法1: 从源码安装
 ```bash
 # Clone the repository
 git clone https://github.com/your-username/epub-parser-mcp.git
@@ -39,38 +40,76 @@ npm install
 npm run build
 ```
 
+#### 方法2: 使用npx（推荐用于生产环境）
+```bash
+# 直接使用npx运行，无需安装
+npx epub-parser-mcp
+```
+
+#### 方法3: 全局安装
+```bash
+# 全局安装
+npm install -g epub-parser-mcp
+
+# 然后直接运行
+epub-parser-mcp
+```
+
 ## 🔧 MCP Configuration
 
-### Claude Desktop Configuration
+### 服务配置 (Server Config)
 
-Add the following to your Claude Desktop configuration file:
+以下是完整的MCP服务配置，可用于Claude Desktop或其他MCP客户端：
 
-**Using npx (Recommended):**
 ```json
 {
   "mcpServers": {
     "epub-parser": {
       "command": "npx",
-      "args": ["-y", "epub-parser-mcp"],
-      "workingDirectory": "D:\\AI_place\\epub-parser-mcp"
+      "args": ["-y", "epub-parser-mcp"]
     }
   }
 }
 ```
 
-**Alternative: Using node directly (if npx is not supported):**
+**环境变量配置 (Environment Variables):**
+```json
+{
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
+```
+
+### Claude Desktop Configuration
+
+Add the following to your Claude Desktop configuration file:
+
+**使用npx (推荐):**
+```json
+{
+  "mcpServers": {
+    "epub-parser": {
+      "command": "npx",
+      "args": ["-y", "epub-parser-mcp"]
+    }
+  }
+}
+```
+
+**备选方案: 使用node直接运行 (如果npx不支持):**
 ```json
 {
   "mcpServers": {
     "epub-parser": {
       "command": "node",
-      "args": ["D:\\AI_place\\epub-parser-mcp\\build\\index.js"]
+      "args": ["/path/to/epub-parser-mcp/build/index.js"]
     }
   }
 }
 ```
 
-**Note:** Claude Desktop currently supports commands starting with `python -m`, `uv`, `uvx`, or `npx`. The `node` command may not be supported in some environments.
+**注意:** Claude Desktop目前支持以 `python -m`、`uv`、`uvx` 或 `npx` 开头的命令。在某些环境中，`node` 命令可能不被支持。
 
 ### Configuration File Locations
 
